@@ -1,3 +1,4 @@
+import { TransferenciaService } from './services/transferencia.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,12 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'bytebank';
-  transferencia: any;
 
-  // Componente nova-transferencia cria o OutPut, esse por sua vez emite esse avento na classe do app.component
-  transferir($event) {
-    console.log($event);
-  // Refatoração das variaveis e tipagens
-    this.transferencia = $event;
+  constructor(private service: TransferenciaService) {
+
   }
 }
